@@ -67,7 +67,6 @@ WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_BUS := PCIE
-#BOARD_USES_SECURE_SERVICES := true
 
 #Bluetooth defines
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -114,7 +113,7 @@ HAVE_ADRENO_SOURCE:= false
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8084
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 
 BOARD_HAS_AUDIO_DSP := true
