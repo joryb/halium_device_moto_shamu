@@ -84,7 +84,7 @@ PRODUCT_COPY_FILES += \
 
 # Touch firmware updater
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.mmi.touch.sh:system/bin/init.mmi.touch.sh
+    device/moto/shamu/init.mmi.touch.sh:system/bin/init.mmi.touch.sh
 
 # Add WiFi Firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4356/device-bcm.mk)
@@ -355,14 +355,14 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
 # In userdebug, add minidebug info the the boot image and the system server to support
 # diagnosing native crashes.
-ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
+#ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
     # Boot image.
-    PRODUCT_DEX_PREOPT_BOOT_FLAGS += --generate-mini-debug-info
+#    PRODUCT_DEX_PREOPT_BOOT_FLAGS += --generate-mini-debug-info
     # System server and some of its services.
     # Note: we cannot use PRODUCT_SYSTEM_SERVER_JARS, as it has not been expanded at this point.
-    $(call add-product-dex-preopt-module-config,services,--generate-mini-debug-info)
-    $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
-endif
+#    $(call add-product-dex-preopt-module-config,services,--generate-mini-debug-info)
+#    $(call add-product-dex-preopt-module-config,wifi-service,--generate-mini-debug-info)
+#endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
    dalvik.vm.heapgrowthlimit=256m
@@ -377,11 +377,11 @@ $(call inherit-product-if-exists, hardware/qcom/msm8x84/msm8x84.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x84/msm8x84-gpu-vendor.mk)
 
 # only include verity on user builds for LineageOS
-ifeq ($(TARGET_BUILD_VARIANT),user)
+#ifeq ($(TARGET_BUILD_VARIANT),user)
 # setup dm-verity configs.
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
-$(call inherit-product, build/target/product/verity.mk)
-endif
+#PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/msm_sdcc.1/by-name/system
+#$(call inherit-product, build/target/product/verity.mk)
+#endif
 
 # setup scheduler tunable
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

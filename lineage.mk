@@ -14,8 +14,7 @@ DEVICE_PACKAGE_OVERLAYS += device/moto/shamu/overlay-cm
 PRODUCT_NAME := lineage_shamu
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6
-
-TARGET_VENDOR := moto
+TARGET_VENDOR := motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=shamu \
